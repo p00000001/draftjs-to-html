@@ -530,6 +530,8 @@ export function getBlockMarkup(
       blockHtml.push('>');
       blockHtml.push(getBlockInnerMarkup(block, entityMap, hashtagConfig, customEntityTransform));
       blockHtml.push(`</${blockTag}>`);
+    } else {
+      blockHtml.push(customEntityTransform(block, block.text));
     }
   }
   blockHtml.push('\n');
